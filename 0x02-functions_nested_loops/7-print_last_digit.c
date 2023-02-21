@@ -1,6 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
+
 /**
  * print_last_digit - prints last digit
  *
