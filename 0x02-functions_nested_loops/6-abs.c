@@ -2,20 +2,20 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * int_abs - to convert to absolute
+ * _abs - to convert to absolute
  *
- * This function returns absolue number
+ * This function converts to absolute
  *
- * @n: represent int
- *
+ * @n: represents int
+ * 
  * Return: Always positive
  */
 
 int _abs(int n)
 {
-    if (n < 0)
-        return -n;
-    else
-        return n;
+	if (n < 0)
+		return -n;
+	else
+		return n;
 }
 
