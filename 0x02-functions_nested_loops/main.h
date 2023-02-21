@@ -7,5 +7,7 @@ int _putchar(char c);
 void print_alphabet(void);
 /* print_alphabet_x10 prototype */
 void print_alphabet_x10(void);
+/* print_is lower */
+int _islower(int c);
 #endif /* MAIN_H */
 
