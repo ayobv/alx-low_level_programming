@@ -2,16 +2,6 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int _putchar(char c);
-
-/**
  * main - Entry point of the program
  *
  * This function prints the '_putchar'
@@ -19,6 +9,7 @@ int _putchar(char c);
  * Return: Always 0 (Success)
  */
 
+int _putchar(char c);
 int main(void)
 {
     _putchar('_');
