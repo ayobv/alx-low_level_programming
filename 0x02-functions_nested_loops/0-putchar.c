@@ -32,13 +32,3 @@ int main(void)
 
     return (0);
 }
-
-/**
- * _putchar - defines the _putchar function
- *
- * Return - as defined in the function
- */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
