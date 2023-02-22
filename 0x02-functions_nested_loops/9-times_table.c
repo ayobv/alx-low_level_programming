@@ -14,38 +14,35 @@
  */
 void times_table(void)
 {
-    int i, j, result;
+	int dav, sad, d;
 
-    for (i = 0; i <= 9; i++)
-    {
-        for (j = 0; j <= 9; j++)
-        {
-            result = i * j;
+	for (dav = 0; dav <= 9; dav++)
+	{
+		_putchar('0');
+		_putchar(',');
+		_putchar(' ');
+		for (sad = 1; sad <= 9; sad++)
+		{
+			d = (dav * sad);
+			if ((d / 10) > 0)
+			{
+				_putchar((d / 10) + '0');
+			}
+			else
+			{
+				_putchar(' ');
+			}
+			_putchar((d % 10) + '0');
 
-            if (j == 0)
-            {
-                /* print the first column with no commas */
-                _putchar('0' + result);
-            }
-            else
-            {
-                /* print the other columns with commas and spaces */
-                _putchar(',');
-                _putchar(' ');
+			if (sad < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		_putchar('\n');
+	}
 
-                if (result < 10)
-                {
-                    /* add an extra space for single-digit numbers */
-                    _putchar(' ');
-                }
-
-                _putchar('0' + result);
-            }
-        }
-
-        /* print a newline at the end of each row */
-        _putchar('\n');
-    }
 }
 
 
