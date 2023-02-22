@@ -13,9 +13,10 @@
  * Return: Always absolute value of last digit
  */
 
-int print_last_digit(int num) 
+int print_last_digit(int num)
 {
 	int last_digit = num % 10;
+
 	_putchar('0' + abs(last_digit));
 	return (abs(last_digit));
 }
