@@ -8,11 +8,15 @@
  *
  * This function adds two numbers
  *
+ * @b: any integer
+ *
+ * @a: any interger
+ *
  * Return: sum of two numbers
  */
 
 int add(int a, int b)
 {
-	return a + b;
+	return (a + b);
 }
 
