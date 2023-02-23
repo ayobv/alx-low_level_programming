@@ -2,9 +2,6 @@
 
 /**
  * main - tests function that prints if integer is positive or negative
- *
- * @i: Any integer but defind here as 0
- *
  * Return: 0
  */
 
@@ -14,6 +11,7 @@ int main(void)
 	
 	i = 0;
 	positive_or_negative(i);
+	
 	return (0);
 }
 
