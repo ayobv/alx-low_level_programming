@@ -10,7 +10,7 @@
 char *cap_string(char *str)
 {
 	int i;
-	
+
 	/* Capitalize first character */
 	if (str[0] >= 'a' && str[0] <= 'z')
 	{
