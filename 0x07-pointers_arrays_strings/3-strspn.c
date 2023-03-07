@@ -5,8 +5,9 @@
  * @s: pointer to a string
  * @accept: pointer to a string containing accepted characters
  *
- * Return: number of bytes in the initial segment of s which consist only of bytes from accept
+ * Return: number of bytes in the initial segment of s
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i, j, count = 0;
