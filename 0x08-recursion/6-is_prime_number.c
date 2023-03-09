@@ -21,10 +21,7 @@ int is_prime_helper(int n, int i)
 }
 
 /**
- * is_prime_helper - helper function to check if a given integer is prime
- *
- * is_prime_number - see function for details
- *
+ * is_prime_number - checks if a given integer is prime
  * @n: the integer to check
  *
  * Return: 1 if n is prime, 0 otherwise
