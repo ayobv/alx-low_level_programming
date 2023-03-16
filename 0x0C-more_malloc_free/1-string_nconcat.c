@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - concatenates two strings, using at most n bytes of s2
+ * string_nconcat - concatenates two strings
  * @s1: the first string
  * @s2: the second string
  * @n: the maximum number of bytes to use from s2
