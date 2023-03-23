@@ -1,10 +1,11 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <stddef.h>
 
 /**
- * print_char - prints a char.
- * @args: the va_list of arguments
+ * print_char - prints a char
+ * @args: the va_list that contains the char to print
  */
 void print_char(va_list args)
 {
@@ -12,8 +13,8 @@ void print_char(va_list args)
 }
 
 /**
- * print_int - prints an integer.
- * @args: the va_list of arguments
+ * print_int - prints an integer
+ * @args: the va_list that contains the integer to print
  */
 void print_int(va_list args)
 {
@@ -21,8 +22,8 @@ void print_int(va_list args)
 }
 
 /**
- * print_float - prints a float.
- * @args: the va_list of arguments
+ * print_float - prints a float
+ * @args: the va_list that contains the float to print
  */
 void print_float(va_list args)
 {
@@ -30,46 +31,48 @@ void print_float(va_list args)
 }
 
 /**
- * print_string - prints a string.
- * @args: the va_list of arguments
+ * print_string - prints a string
+ * @args: the va_list that contains the string to print
  */
 void print_string(va_list args)
 {
-	char *str = va_arg(args, char *);
+	char *str;
 
+	str = va_arg(args, char *);
 	if (str == NULL)
-		printf("(nil)");
-	else
-		printf("%s", str);
+		str = "(nil)";
+	printf("%s", str);
 }
 
 /**
- * print_all - prints anything.
- * @format: a list of types of arguments passed to the function.
+ * print_all - prints anything
+ * @format: a list of types of arguments passed to the function
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0, j = 0;
-	const char types[] = "cifs";
-	void (*print_fn)(va_list);
+	char *separator = "";
+	print_fn_t print_fn[] =	{
+		{ 'c', print_char },
+		{ 'i', print_int },
+		{ 'f', print_float },
+		{ 's', print_string },
+		{ '\0', NULL }
+	};
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
 		j = 0;
-		while (types[j])
+		while (print_fn[j].type != '\0')
 		{
-			if (format[i] == types[j])
+			if (format[i] == print_fn[j].type)
 			{
-				print_fn = (j == 0) ? print_char :
-					(j == 1) ? print_int :
-					(j == 2) ? print_float :
-					print_string;
-				print_fn(args);
-				if (format[i + 1] != '\0' && types[j] != '\0')
-					printf(", ");
+				printf("%s", separator);
+				print_fn[j].fn(args);
+				separator = ", ";
 				break;
 			}
 			j++;
